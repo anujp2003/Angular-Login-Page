@@ -1,0 +1,86 @@
+/* .main-body {
+  background-image: url(https://imgs.search.brave.com/doXTA6oNSGmmyjD3lpglZ0O980RAI6r8TzaHKBdOQFI/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9ibG9n/Lmx2aGdsb2JhbC5j/b20vY29udGVudC9p/bWFnZXMvMjAxOC8x/MC9oYXdhaWktc3Vu/c2V0LW1haW4ucG5n);
+  background-size: cover;
+  background-position: center center;
+} */
+.header {
+  font-size: 20px;
+  justify-content: space-between;
+}
+.form-container {
+  border-radius: 16px;
+  width: 367px;
+  position: absolute;
+  top: 30px;
+  left: 35%;
+  background-color: white;
+  padding: 30px;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.example-full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+.forgot-pass {
+  display: flex;
+  justify-content: right;
+}
+.center-top {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.button-top {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.formGroup {
+  margin-left: 47%;
+}
+.redirectToLogin {
+  display: flex;
+  justify-content: space-evenly;
+}
+.redirect {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Sign-up {
+  justify-content: space-evenly;
+  display: flex;
+}
+.btn-size {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.header {
+  font-weight: bold;
+  font-size: x-large;
+  justify-content: center;
+  display: flex;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  background-color: #0e4166;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(14, 65, 102, 0.86),
+    #0e4166
+  );
+  overflow: hidden;
+}

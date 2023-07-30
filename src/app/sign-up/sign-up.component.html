@@ -1,0 +1,100 @@
+<body class="main-body ">
+
+    <body>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+            <defs>
+                <linearGradient id="bg">
+                    <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
+                    <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
+                    <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
+                </linearGradient>
+                <path id="wave" fill="url(#bg)"
+                    d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+        s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+            </defs>
+            <g>
+                <use xlink:href='#wave' opacity=".3">
+                    <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
+                        calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                </use>
+                <use xlink:href='#wave' opacity=".6">
+                    <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
+                        calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                </use>
+                <use xlink:href='#wave' opacty=".9">
+                    <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
+                        calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                </use>
+            </g>
+        </svg>
+    </body>
+
+    <div class="form-container mdc-elevation--z5  ">
+        <a class="header">Sign-up</a><br>
+        <form [formGroup]="form" (ngSubmit)="LoginUser()" class="example-form">
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Enter Full name" formControlName="fullname" required>
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="fullname?.errors?.['required']">Fullname is required</mat-error>
+            </mat-form-field>
+            <br>
+            <br />
+
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" required>
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
+            </mat-form-field>
+
+            <br>
+            <br />
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Enter Password </mat-label>
+                <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide =!hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="password?.errors?.['required']">Password is required</mat-error>
+            </mat-form-field>
+            <br><br />
+
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Confirm Password" formControlName="password"
+                    [type]="showPassword ? 'text' : 'password'" name="password">
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{showPassword?'visibility_off':'visibility'}} </mat-icon>
+                <mat-error *ngIf="password?.errors?.['required']">Confirm Password</mat-error>
+
+            </mat-form-field>
+
+            <div class="button-top">
+                <br />
+                <button class="btn-size" mat-raised-button color="primary" type="submit" (click)="LoginUser()">
+                    Submit
+                </button>
+            </div>
+
+            <br />
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Or</span></span>
+            </div>
+            <br>    
+            <span class="Sign-up">Already have an account? <a class="Sign-up" routerLink="//sign-in">Log In
+                </a></span>
+
+        </form>
+
+    </div>
+</body>
